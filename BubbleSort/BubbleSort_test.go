@@ -26,3 +26,12 @@ func TestBubbleSort(t *testing.T) {
 		t.Fatalf(`BubbleSort(array) = %q, want match for %v`, sorted, want)
 	}
 }
+
+func TestEmptyBubbleSort(t *testing.T) {
+	array := []int{}
+	sorted, err := BubbleSort(array)
+	checkslices := equal(sorted, array)
+	if !checkslices == true || err == nil {
+		t.Fatalf(`BubbleSort(array) = %q, want match for []`, array)
+	}
+}
