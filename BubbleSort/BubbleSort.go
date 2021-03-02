@@ -7,12 +7,10 @@ import (
 //BubbleSort sort list via algorithm
 func BubbleSort(numbers []int) []int {
 
-	for i := len(numbers); i > 0; i-- {
-		for j := 1; j < i; j++ {
-			if numbers[j-1] < numbers[j] {
-				skipholder := numbers[j]
-				numbers[j] = numbers[j-1]
-				numbers[j-1] = skipholder
+	for i := 0; i < len(numbers)-1; i++ {
+		for j := 0; j < len(numbers)-i-1; j++ {
+			if numbers[j] > numbers[j+1] {
+				numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
 			}
 
 		}
